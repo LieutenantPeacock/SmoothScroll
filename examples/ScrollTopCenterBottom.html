@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Scroll To Top, Center, and Bottom</title>
+<script src="../src/smoothscroll.js"></script>
+</head>
+<body>
+<button class="to-center">Scroll To Center</button> 
+<button class="to-end">Scroll To Bottom</button>
+<div style="margin: 1000px 0;">
+	<button class="to-start">Scroll To Top</button>
+	<button class="to-end">Scroll To Bottom</button>
+</div>
+<button class="to-center">Scroll To Center</button> <button class="to-start">Scroll To Top</button>
+<script>
+var positions = ['start', 'center', 'end'];
+for(var i = 0; i < positions.length; i++){
+	(function(position){
+		var btns = document.querySelectorAll('button.to-' + position);
+		for(var j = 0; j < btns.length; j++){
+			btns[j].addEventListener('click', function(e){
+				smoothScroll({yPos: position});
+			});
+		}
+	})(positions[i]);
+}
+</script>
+</body>
+</html>

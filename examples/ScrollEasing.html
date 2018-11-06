@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Scroll Easing</title>
+<script src="../src/smoothscroll.js"></script>
+</head>
+<body>
+Easing: <select id="easings"></select>
+<button id="to-bottom">Scroll To Bottom</button>
+<br>
+<button id="to-top" style="margin-top: 5000px;">Scroll To Top</button>
+<script>
+var easings = document.getElementById("easings");
+for(var key in smoothScroll.easing){
+	if(smoothScroll.easing.hasOwnProperty(key)){
+		var option = document.createElement('option');
+		option.text = option.value = key;
+		easings.add(option);
+	}
+}
+document.getElementById('to-bottom').addEventListener('click', function(e){
+	smoothScroll({yPos: 'end', easing: easings.value, duration: 2000});
+});
+document.getElementById('to-top').addEventListener('click', function(e){
+	smoothScroll({yPos: 'start', easing: easings.value, duration: 2000});
+});
+</script>
+</body>
+</html>

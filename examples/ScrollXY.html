@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Scroll X and Y axes</title>
+<script src="../src/smoothscroll.js"></script>
+<style>
+html, body {
+	width: 2500px;
+	height: 2500px;
+}
+#back {
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+}
+</style>
+</head>
+<body>
+<button id="scrollParallel">Scroll to position (700, 800)</button>
+<button id="scrollXFirst">Scroll to position (700, 800), x-axis first</button>
+<button id="scrollYFirst">Scroll to position (700, 800), y-axis first</button>
+<button id="back" style="display: none;">Back To Origin</button>
+<script>
+document.getElementById("scrollParallel").addEventListener("click", function(e){
+	smoothScroll({xPos: 700, yPos: 800, duration: 1300});
+});
+document.getElementById("scrollXFirst").addEventListener("click", function(e){
+	smoothScroll({xPos: 700, yPos: 800, duration: 1300, firstAxis: 'x'});
+});
+document.getElementById("scrollYFirst").addEventListener("click", function(e){
+	smoothScroll({xPos: 700, yPos: 800, duration: 1300, firstAxis: 'y'});
+});
+
+window.addEventListener("scroll", function(e){
+	if(window.pageYOffset != 0 || window.pageXOffset != 0){
+		document.getElementById("back").style.display = '';
+	} else {
+		document.getElementById("back").style.display = 'none';
+	}
+});
+document.getElementById("back").addEventListener("click", function(e){
+	smoothScroll({xPos: 0, yPos: 0, duration: 1300});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Scroll Container Element</title>
+<script src="../src/smoothscroll.js"></script>
+<style>
+#container {
+	overflow-y: auto;
+	max-height: 500px;
+	max-width: 500px;
+	border: 1px solid red;
+}
+</style>
+</head>
+<body>
+<div id="container">
+</div>
+<br>
+<button id="to-top">Scroll to Top</button>
+<button id="to-bottom">Scroll to Bottom</button>
+<button id="to-center">Scroll to Center</button>
+<button id="to-pos">Scroll to y-position 400px</button>
+<script>
+var container = document.getElementById("container");
+for(var i = 1; i <= 100; i++){
+	var div = document.createElement('div');
+	div.textContent = i;
+	div.style.border = '1px solid green';
+	container.appendChild(div);
+}
+document.getElementById("to-top").addEventListener("click", function(e){
+	smoothScroll({yPos: 'start', duration: 1500, scrollingElement: container});
+});
+document.getElementById("to-bottom").addEventListener("click", function(e){
+	smoothScroll({yPos: 'end', duration: 1500, scrollingElement: container});
+});
+document.getElementById("to-center").addEventListener("click", function(e){
+	smoothScroll({yPos: 'center', duration: 1500, scrollingElement: container});
+});
+document.getElementById("to-pos").addEventListener("click", function(e){
+	smoothScroll({yPos: 400, duration: 1500, scrollingElement: container});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Scroll To Element</title>
+<script src="../src/smoothscroll.js"></script>
+<style>
+#myDiv {
+	color: lightgreen;
+	border: 1px solid black;
+	margin-top: 2000px;
+	margin-bottom: 1000px;
+}
+</style>
+</head>
+<body>
+<button>Scroll to #myDiv</button>
+<div id="myDiv">This is #myDiv.</div>
+<script>
+document.querySelector('button').addEventListener('click', function(e){
+	smoothScroll({toElement: document.getElementById('myDiv')});
+});
+</script>
+</body>
+</html>

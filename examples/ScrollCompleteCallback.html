@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Scroll Complete Callback</title>
+<script src="../src/smoothscroll.js"></script>
+<style>
+html, body {
+	height: 4000px;
+}
+</style>
+</head>
+<body>
+<button>Scroll to y-position 1500px in 2s</button>
+<script>
+document.querySelector('button').addEventListener('click', function(e){
+	smoothScroll({
+		yPos: 1500, 
+		duration: 2000, 
+		complete: function(){
+			alert('Smooth scrolling complete!');
+		}
+	});
+});
+</script>
+</body>
+</html>

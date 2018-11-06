@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Scroll By</title>
+<script src="../src/smoothscroll.js"></script>
+<style>
+html, body {
+	height: 5000px;
+}
+</style>
+</head>
+<body>
+<div style="position: fixed;">
+	<button id="plusPx">+100px</button>
+	<button id="plusPercent">+10%</button>
+	<button id="minusPx">-100px</button>
+	<button id="minusPercent">-10%</button>
+</div>
+<script>
+document.getElementById("plusPx").addEventListener("click", function(e){
+	smoothScroll({yPos: '+100', duration: 200});
+});
+document.getElementById("plusPercent").addEventListener("click", function(e){
+	smoothScroll({yPos: '+10%'});
+});
+document.getElementById("minusPx").addEventListener("click", function(e){
+	smoothScroll({yPos: '-100', duration: 200});
+});
+document.getElementById("minusPercent").addEventListener("click", function(e){
+	smoothScroll({yPos: '-10%'});
+});
+</script>
+</body>
+</html>

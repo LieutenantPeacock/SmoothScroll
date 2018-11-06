@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Scroll Y Example</title>
+<script src="../src/smoothscroll.js"></script>
+<style>
+html, body {
+	height: 2000px;
+}
+</style>
+</head>
+<body>
+<button>Scroll to y-position 500px in 700ms</button>
+<script>
+document.querySelector('button').addEventListener('click', function(e){
+	smoothScroll({yPos: 500, duration: 700});
+});
+</script>
+</body>
+</html>
