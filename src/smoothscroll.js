@@ -99,7 +99,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		preventUserScroll: true,
 		scrollEvents: ['scroll', 'mousedown', 'wheel', 'DOMMouseScroll', 'mousewheel', 'touchmove'],
 		scrollKeys: [37, 38, 39, 40, 32],
-		allowAnimationOverlap: false
+		allowAnimationOverlap: false,
+		easing: 'linear'
 	}
 	function getNotNull() {
 		for (var i = 0; i < arguments.length; i++) {
@@ -409,7 +410,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		linear: function(e) { return e },
 		swing: function(e) { return .5 - Math.cos(e * Math.PI) / 2 }
 	}
-	defaults.easing = smoothScroll.easing.linear;
 	var base = {
 		Sine: function(p) {
 			return 1 - Math.cos(p * Math.PI / 2);
