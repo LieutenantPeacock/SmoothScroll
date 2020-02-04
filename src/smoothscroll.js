@@ -217,9 +217,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 					}
 				} else {
 					scrollingElem = void 0;
-					scroll = function(x, y) {
-						window.scrollTo(x, y);
-					}
+					scroll = window.scrollTo;
 				}
 			} else {
 				throw new Error("Scrolling element must be a HTML element");
