@@ -146,8 +146,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	}
 	window.smoothScroll = function smoothScroll(options) {
 		if (!body) body = document.getElementsByTagName('body')[0];
+		options = options || {};
 		if (this instanceof smoothScroll) {
-			options = options || {};
 			return {
 				smoothScroll: function(opts) {
 					opts = opts || {};
@@ -161,7 +161,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 				}
 			};
 		}
-		options = options || {};
 		var yPos = getNotNull(options.yPos, defaults.yPos),
 			duration = +getNotNull(options.duration, defaults.duration),
 			xPos = getNotNull(options.xPos, defaults.xPos),
