@@ -26,6 +26,19 @@ Scroll to x-position 500px and y-position 500px:
 smoothScroll({xPos: 500, yPos: 500});
 ```
 
+## Including the Script
+The script can be included via CDN by adding the following into the head of the HTML page:
+
+```
+<script src="https://cdn.jsdelivr.net/gh/LieutenantPeacock/SmoothScroll@1.2.0/src/smoothscroll.min.js"></script>
+```
+
+You can also download [smoothscroll.min.js](src/smoothscroll.min.js) and include it in the head of the page using your own path:
+
+```
+<script src="path/to/smoothscroll.min.js"></script>
+```
+
 ## Options
 
 <table>
