@@ -2,7 +2,7 @@
 
 A cross-browser compatible, lightweight, easy-to-use library for smooth scrolling!
 
-```
+```js
 smoothScroll({options});
 ```
 
@@ -10,32 +10,32 @@ smoothScroll({options});
 
 Scroll to y-position 1000px in 750 milliseconds:
 
-```
+```js
 smoothScroll({yPos: 1000, duration: 750});
 ```
 
 Scroll to the bottom of the page:
 
-```
+```js
 smoothScroll({yPos: 'end'});
 ```
 
 Scroll to x-position 500px and y-position 500px:
 
-```
+```js
 smoothScroll({xPos: 500, yPos: 500});
 ```
 
 ## Including the Script
 The script can be included via CDN by adding the following into the head of the HTML page:
 
-```
+```html
 <script src="https://cdn.jsdelivr.net/gh/LieutenantPeacock/SmoothScroll@1.2.0/src/smoothscroll.min.js" integrity="sha384-UdJHYJK9eDBy7vML0TvJGlCpvrJhCuOPGTc7tHbA+jHEgCgjWpPbmMvmd/2bzdXU" crossorigin="anonymous"></script>
 ```
 
 You can also download [smoothscroll.min.js](src/smoothscroll.min.js) and include it in the head of the page using your own path:
 
-```
+```html
 <script src="path/to/smoothscroll.min.js"></script>
 ```
 
@@ -182,7 +182,7 @@ You can also download [smoothscroll.min.js](src/smoothscroll.min.js) and include
 `smoothScroll` returns an object with the `destroy` property which is a function that stops
 the scrolling when called.
 
-```
+```js
 var s = smoothScroll({yPos: 5000, duration: 3000});
 // Stop the scrolling sometime later
 s.destroy();
@@ -194,7 +194,7 @@ Using the `new` operator will create an instance with the passed in options as d
 specified in this options object will override the original defaults. Call the `smoothScroll` method on
 the returned value to perform smooth scrolling with these defaults.
 
-```
+```js
 var scroller = new smoothScroll({duration: 700, block: 'center'});
 scroller.smoothScroll({yPos: 500}); // duration is 700 (rather than the original default of 500)
 ```
@@ -206,7 +206,7 @@ scroller.smoothScroll({yPos: 500}); // duration is 700 (rather than the original
 Passing an object to `smoothScroll.defaults` will overwrite each option in the defaults with 
 the value from that object if it is set.
 
-```
+```js
 smoothScroll.defaults({duration: 700}); // set default duration to 700ms
 ```
 
